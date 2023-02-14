@@ -34,7 +34,7 @@ const AddNewNote = () => {
       <Row className="addnotebtn">
         <Col flex="auto"></Col>
         <Col flex="220px">
-          <Button onClick={() => setShowModal(true)}>
+          <Button type="primary" onClick={() => setShowModal(true)}>
             Add New Note <PlusCircleOutlined />
           </Button>
         </Col>

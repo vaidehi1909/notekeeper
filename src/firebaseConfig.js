@@ -1,15 +1,16 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
+console.log(import.meta.env.VITE_PROJECT_ID, "PROJECT_ID....");
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDTQGTzfzAy8yOLwsF-qSf5uMSQY4qLCDE",
-  authDomain: "notekeeper-53820.firebaseapp.com",
-  projectId: "notekeeper-53820",
-  storageBucket: "notekeeper-53820.appspot.com",
-  messagingSenderId: "849702261683",
-  appId: "1:849702261683:web:9cac344fd382a258c1b1c6",
-  databaseURL:
-    "https://notekeeper-53820-default-rtdb.asia-southeast1.firebasedatabase.app",
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  databaseURL: import.meta.env.VITE_DATABASE_URL,
 };
 
 const app = initializeApp(firebaseConfig);
