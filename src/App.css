@@ -1,0 +1,43 @@
+body {
+  font-family: cursive;
+}
+
+.ant-card .ant-card-actions {
+  border-top: none;
+}
+.ant-card .ant-card-actions li {
+  /* border-inline-end: none; */
+  margin-left: 20px;
+  /* text-align: left; */
+}
+
+.header {
+  color: #bd41be;
+  font-family: cursive;
+  margin-left: 20;
+}
+
+.ant-btn-primary {
+  background-color: #bd41be;
+}
+
+.ant-btn-default {
+  background-color: #bd41be;
+  border-color: #bd41be;
+  color: #fff;
+}
+.ant-btn-primary:not(:disabled):hover {
+  background-color: #563356;
+  border-color: #563356;
+  color: #fff;
+}
+
+.ant-btn-default:not(:disabled):hover {
+  border-color: #563356;
+  background-color: #563356;
+  color: #fff;
+}
+
+/* .addnotebtn {
+  margin-bottom: 5px;
+} */
