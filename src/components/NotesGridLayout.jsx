@@ -6,6 +6,10 @@ import { PAGE_SIZE } from "../constants";
 
 const { Header, Footer, Sider, Content } = Layout;
 
+const EmptyDataView = () => {
+  return <h1 className="empty-data-view">No Notes Added</h1>;
+};
+
 const NotesGridLayout = ({ notes }) => {
   const [paginatedNotes, setPaganiatedNotes] = useState(
     notes.slice(0, PAGE_SIZE)
@@ -30,51 +34,42 @@ const NotesGridLayout = ({ notes }) => {
 
   return (
     <Layout>
-      <Header
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 1,
-          width: "100%",
-          backgroundColor: "white",
-        }}
-      >
+      <Header className="action-header">
         <Row>
-          <Col span={5} offset={16}>
+          <Col flex="auto"></Col>
+          <Col flex="220px">
             <AddNewNote />
           </Col>
         </Row>
       </Header>
-      <Content style={{ backgroundColor: "white" }}>
-        <Row
-          style={{
-            justifyContent: "center",
-            padding: 2,
-            minHeight: 500,
-          }}
-        >
-          {paginatedNotes.map((note) => {
-            return (
-              <Col key={note.id} style={{ margin: "5px" }}>
-                <NotesCardLayout note={note} />
-              </Col>
-            );
-          })}
+      <Content className="white-bg">
+        <Row className="card-justify">
+          {paginatedNotes.length > 0 ? (
+            paginatedNotes.map((note) => {
+              return (
+                <Col key={note.id} className="margin-5px">
+                  <NotesCardLayout note={note} />
+                </Col>
+              );
+            })
+          ) : (
+            <EmptyDataView />
+          )}
         </Row>
       </Content>
 
-      <Footer
-        style={{ position: "sticky", bottom: "0", backgroundColor: "white" }}
-      >
+      <Footer className="action-footer">
         <Row className="addnotebtn">
           <Col flex="auto"></Col>
           <Col flex="60%">
-            <Pagination
-              current={current}
-              pageSize={PAGE_SIZE}
-              onChange={onChange}
-              total={notes.length}
-            />
+            {notes.length > 0 && (
+              <Pagination
+                current={current}
+                pageSize={PAGE_SIZE}
+                onChange={onChange}
+                total={notes.length}
+              />
+            )}
           </Col>
         </Row>
       </Footer>

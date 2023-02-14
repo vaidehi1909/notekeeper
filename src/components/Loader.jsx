@@ -7,25 +7,18 @@ const Loader = () => {
     <>
       <Row className="addnotebtn">
         <Col flex="auto"></Col>
-        <Col flex="100px">
+        <Col flex="220px">
           <Skeleton.Button />
         </Col>
       </Row>
-      <Row>
+      <Row className="card-justify">
         {Array.from({
           length: PAGE_SIZE,
         }).map((_, i) => {
           return (
-            <Col key={i} style={{ margin: "5px" }}>
-              <Card
-                style={{
-                  width: 370,
-                  height: 220,
-                  borderColor: "gainsboro",
-                }}
-                hoverable
-              >
-                <div style={{ minHeight: "100px" }}>
+            <Col key={i} className="margin-5px">
+              <Card>
+                <div className="min-hight ">
                   <Skeleton />
                 </div>
               </Card>

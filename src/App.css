@@ -11,10 +11,11 @@ body {
   /* text-align: left; */
 }
 
-.header {
+.title {
   color: #bd41be;
   font-family: cursive;
-  margin-left: 20;
+  margin-left: 20px;
+  padding-top: 10px;
 }
 
 .ant-btn-primary {
@@ -38,6 +39,66 @@ body {
   color: #fff;
 }
 
-/* .addnotebtn {
-  margin-bottom: 5px;
-} */
+.ant-layout .ant-layout-header {
+  background: #fff;
+}
+
+.action-header {
+  width: "100%";
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.white-bg {
+  background: white;
+}
+
+.card-justify {
+  padding: 2px;
+  min-height: 480px;
+  justify-content: center;
+}
+
+.margin-5px {
+  margin: 5px;
+}
+.margin-left {
+  margin-left: 5px;
+}
+
+.action-footer {
+  position: sticky;
+  bottom: 0;
+}
+.ant-layout .ant-layout-footer {
+  background: #fff;
+}
+.ant-card-bordered {
+  border-color: gainsboro;
+}
+.ant-card {
+  width: 370px;
+  height: 220px;
+}
+
+.min-hight {
+  min-height: 100px;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.light-purple-color {
+  color: #bd41be;
+}
+.empty-data-view {
+  color: gray;
+  display: flex;
+  align-items: center;
+}

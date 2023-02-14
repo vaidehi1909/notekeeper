@@ -43,14 +43,14 @@ const CardActions = ({ note }) => {
     <>
       {note.pinned === STATUS_PINNED ? (
         <PushpinFilled
-          style={{ color: LIGHT_PURPLE_COLOR }}
+          className="light-purple-color"
           onClick={() => {
             onPinUnpinAction("unpin");
           }}
         />
       ) : (
         <PushpinOutlined
-          style={{ color: LIGHT_PURPLE_COLOR }}
+          className="light-purple-color"
           onClick={() => {
             onPinUnpinAction("pin");
           }}
@@ -64,7 +64,7 @@ const CardActions = ({ note }) => {
         cancelText="No"
         onConfirm={onDelete}
       >
-        <DeleteOutlined style={{ color: LIGHT_PURPLE_COLOR }} />
+        <DeleteOutlined className="light-purple-color" />
       </Popconfirm>
     </>
   );

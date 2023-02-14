@@ -3,7 +3,6 @@ import { Form, Input } from "antd";
 const { TextArea } = Input;
 
 const NoteForm = ({ form, note, mode }) => {
-  console.log(note);
   const initialValues = {
     title: note?.title,
     tagline: note?.tagline,
@@ -17,9 +16,7 @@ const NoteForm = ({ form, note, mode }) => {
     <Form
       form={form}
       name="new_form"
-      style={{
-        marginLeft: "5px",
-      }}
+      className="margin-left"
       initialValues={initialValues}
       preserve={false}
       labelCol={{ span: 4 }}
@@ -38,7 +35,16 @@ const NoteForm = ({ form, note, mode }) => {
         <Input style={style} />
       </Form.Item>
 
-      <Form.Item label="Tagline" name="tagline">
+      <Form.Item
+        label="Tagline"
+        name="tagline"
+        rules={[
+          {
+            required: true,
+            message: "Please Enter TagLine",
+          },
+        ]}
+      >
         <Input style={style} />
       </Form.Item>
 
@@ -48,7 +54,7 @@ const NoteForm = ({ form, note, mode }) => {
         rules={[
           {
             required: true,
-            message: "Please Enter Some Content",
+            message: "Please Enter content",
           },
         ]}
       >

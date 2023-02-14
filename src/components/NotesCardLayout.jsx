@@ -37,25 +37,18 @@ const NotesCardLayout = ({ note }) => {
 
   return (
     <>
-      <Card
-        title={note.title}
-        extra={<CardActions note={note} />}
-        style={{
-          width: 370,
-          height: 220,
-          borderColor: "gainsboro",
-        }}
-        hoverable
-      >
+      <Card title={note.title} extra={<CardActions note={note} />} hoverable>
         <div
           onClick={() => {
             setShowModal(true);
           }}
         >
-          <div style={{ minHeight: "100px" }}>
-            <Tag color={LIGHT_PURPLE_COLOR} style={{ marginBottom: "10px" }}>
-              {note.tagline}
-            </Tag>
+          <div className="min-hight">
+            {note?.tagline && (
+              <Tag color={LIGHT_PURPLE_COLOR} className="margin-bottom">
+                {note?.tagline}
+              </Tag>
+            )}
             <Paragraph
               ellipsis={{
                 rows: 2,
@@ -64,7 +57,7 @@ const NotesCardLayout = ({ note }) => {
               {note.content}
             </Paragraph>
           </div>
-          <Paragraph type="secondary" style={{ textAlign: "left" }}>
+          <Paragraph type="secondary" className="text-align-left">
             {last_updated_at}
           </Paragraph>
         </div>
