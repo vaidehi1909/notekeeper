@@ -97,7 +97,7 @@ body {
   color: #bd41be;
 }
 .empty-data-view {
-  color: gray;
+  color: rgb(236, 162, 219);
   display: flex;
   align-items: center;
 }
