@@ -15,7 +15,7 @@ const NotesCardLayout = ({ note }) => {
     set(ref(db, "notes/" + note.id), {
       ...note,
       ...values,
-      updated_at: new Date().toLocaleString(),
+      updated_at: new Date().toString(),
     })
       .then(() => {
         message.success("Note updated successfully");
