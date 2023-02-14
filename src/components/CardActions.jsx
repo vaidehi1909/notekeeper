@@ -1,7 +1,5 @@
 import React from "react";
 import {
-  EditOutlined,
-  InfoCircleOutlined,
   PushpinOutlined,
   PushpinFilled,
   DeleteOutlined,
@@ -9,11 +7,7 @@ import {
 import { Divider, message, Popconfirm, Tooltip } from "antd";
 import { db } from "../firebaseConfig";
 import { ref, set } from "firebase/database";
-import {
-  LIGHT_PURPLE_COLOR,
-  STATUS_PINNED,
-  STATUS_UNPINNED,
-} from "../constants";
+import { STATUS_PINNED, STATUS_UNPINNED } from "../constants";
 
 const CardActions = ({ note }) => {
   const onPinUnpinAction = (action) => {

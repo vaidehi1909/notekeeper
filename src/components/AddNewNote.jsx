@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button, Row, Col } from "antd";
 import { db } from "../firebaseConfig";
 import { ref, set, push, child } from "firebase/database";
@@ -9,21 +9,20 @@ import { PlusCircleOutlined } from "@ant-design/icons";
 const AddNewNote = () => {
   const [showModal, setShowModal] = useState(false);
   const onSubmit = (values) => {
-    // Get a key for a new Post.
     const newNoteKey = push(child(ref(db), "notes")).key;
     set(ref(db, "notes/" + newNoteKey), {
-      id: newNoteKey,
       ...values,
+      id: newNoteKey,
       pinned: STATUS_UNPINNED,
       created_at: new Date().toLocaleString(),
       updated_at: new Date().toLocaleString(),
     })
       .then(() => {
-        // Data saved successfully!
         setShowModal(false);
+        message.success("Note added successfully");
       })
-      .catch((error) => {
-        // The write failed...
+      .catch(() => {
+        message.error("Unable to add");
       });
   };
 
@@ -44,7 +43,7 @@ const AddNewNote = () => {
         showModal={showModal}
         onSubmit={onSubmit}
         onCancel={onCancel}
-        mode={"create"}
+        mode={"add"}
       />
     </>
   );

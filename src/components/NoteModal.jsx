@@ -29,7 +29,7 @@ const NoteModal = ({ showModal, onSubmit, onCancel, mode, note }) => {
       destroyOnClose
       maskClosable={false}
     >
-      <NoteForm form={form} note={note ? note : undefined} mode={mode} />
+      <NoteForm form={form} note={note} />
     </Modal>
   );
 };

@@ -2,16 +2,13 @@ import React from "react";
 import { Form, Input } from "antd";
 const { TextArea } = Input;
 
-const NoteForm = ({ form, note, mode }) => {
+const NoteForm = ({ form, note }) => {
   const initialValues = {
     title: note?.title,
     tagline: note?.tagline,
     content: note?.content,
   };
-  let style = {};
-  if (mode === "view") {
-    style = { border: "none", color: "black", backgroundColor: "floralwhite" };
-  }
+
   return (
     <Form
       form={form}
@@ -20,7 +17,6 @@ const NoteForm = ({ form, note, mode }) => {
       initialValues={initialValues}
       preserve={false}
       labelCol={{ span: 4 }}
-      disabled={mode === "view"}
     >
       <Form.Item
         label="Title"
@@ -32,7 +28,7 @@ const NoteForm = ({ form, note, mode }) => {
           },
         ]}
       >
-        <Input style={style} />
+        <Input />
       </Form.Item>
 
       <Form.Item
@@ -45,7 +41,7 @@ const NoteForm = ({ form, note, mode }) => {
           },
         ]}
       >
-        <Input style={style} />
+        <Input />
       </Form.Item>
 
       <Form.Item
@@ -58,7 +54,7 @@ const NoteForm = ({ form, note, mode }) => {
           },
         ]}
       >
-        <TextArea rows={4} style={style} />
+        <TextArea rows={4} />
       </Form.Item>
     </Form>
   );
