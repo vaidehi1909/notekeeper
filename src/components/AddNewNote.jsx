@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Row, Col } from "antd";
+import { Button, Row, Col, message } from "antd";
 import { db } from "../firebaseConfig";
 import { ref, set, push, child } from "firebase/database";
 import NoteModal from "./NoteModal";
@@ -18,8 +18,8 @@ const AddNewNote = () => {
       updated_at: new Date().toLocaleString(),
     })
       .then(() => {
-        setShowModal(false);
         message.success("Note added successfully");
+        setShowModal(false);
       })
       .catch(() => {
         message.error("Unable to add");
