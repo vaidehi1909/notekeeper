@@ -14,8 +14,8 @@ const AddNewNote = () => {
       ...values,
       id: newNoteKey,
       pinned: STATUS_UNPINNED,
-      created_at: new Date().toLocaleString(),
-      updated_at: new Date().toLocaleString(),
+      created_at: new Date().toString(),
+      updated_at: new Date().toString(),
     })
       .then(() => {
         message.success("Note added successfully");
